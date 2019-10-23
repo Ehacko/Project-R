@@ -3,8 +3,21 @@ db.createCollection('ingredients')
 db.createCollection('recette')
 db.createCollection('menu')
 
-db.valeursNutritives.insert({
-	//faire la liste de tous les nutriments
+db.valeursNutritives.insertMany({
+	{ nom : B1 },
+	{ nom : B2 },
+	{ nom : B3 },
+	{ nom : B5 },
+	{ nom : B6 },
+	{ nom : B8 },
+	{ nom : B9 },
+	{ nom : B12 },
+	{ nom : C },
+	{ nom : A },
+	{ nom : D },
+	{ nom : E },
+	{ nom : K1 },
+	{ nom : K2 }
 }) 
 
 db.ingredients.insert({
