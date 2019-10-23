@@ -1,0 +1,52 @@
+db.createCollection('valeursNutritives')
+db.createCollection('ingredients')
+db.createCollection('recette')
+db.createCollection('menu')
+
+db.valeursNutritives.insert({
+	//faire la liste de tous les nutriments
+}) 
+
+db.ingredients.insert({
+	nom : ,
+	quantité : ,
+	valeur : [
+		{ nutriment : id; qtte : x},
+		{ nutriment : id; qtte : x},
+		{ nutriment : id; qtte : x}
+	]
+})
+
+db.recette.insert({
+	nom : ,
+	ingredients : [
+		{ ingredient : id; qtte : x},
+		{ ingredient : id; qtte : x},
+		{ ingredient : id; qtte : x}
+	],
+	tag [ dessert, entrée, plat, saison, origine, boisson]
+})
+
+
+db.recette.insert({
+	date : num,
+	matin :{
+		entrée:,
+		plat:,
+		dessert,
+		boisson
+	},
+	midi :{
+		entrée:,
+		plat:,
+		dessert,
+		boisson
+	},
+	soir :{
+		entrée:,
+		plat:,
+		dessert,
+		boisson
+	}
+	//calcul de la valeur nutritive
+})
