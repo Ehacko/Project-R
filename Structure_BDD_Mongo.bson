@@ -1,32 +1,15 @@
-db.createCollection('valeursNutritives')
 db.createCollection('ingredients')
 db.createCollection('recette')
 db.createCollection('menu')
-
-db.valeursNutritives.insertMany({
-	{ nom : B1 },
-	{ nom : B2 },
-	{ nom : B3 },
-	{ nom : B5 },
-	{ nom : B6 },
-	{ nom : B8 },
-	{ nom : B9 },
-	{ nom : B12 },
-	{ nom : C },
-	{ nom : A },
-	{ nom : D },
-	{ nom : E },
-	{ nom : K1 },
-	{ nom : K2 }
-}) 
+db.createCollection('nutrparing')
 
 db.ingredients.insert({
 	nom : ,
 	quantité : ,
-	valeur : [
-		{ nutriment : id; qtte : x},
-		{ nutriment : id; qtte : x},
-		{ nutriment : id; qtte : x}
+	valeurNutritives : [
+		{ nutriment : nom; qtte : x, unite : 'g/kg'},
+		{ nutriment : nom; qtte : x, unite : 'ml/l'},
+		{ nutriment : nom; qtte : x, unite : 'g/l'}
 	]
 })
 
