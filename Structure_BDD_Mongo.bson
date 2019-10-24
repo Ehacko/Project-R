@@ -1,7 +1,6 @@
 db.createCollection('ingredients')
 db.createCollection('recette')
 db.createCollection('menu')
-db.createCollection('nutrparing')
 
 db.ingredients.insert({
 	nom : ,
