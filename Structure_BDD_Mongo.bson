@@ -22,7 +22,6 @@ db.recette.insert({
 	tag [ dessert, entrée, plat, saison, origine, boisson]
 })
 
-
 db.recette.insert({
 	date : num,
 	matin :{
