@@ -1,0 +1,5 @@
+Menus:
+  - "date" OnHover, glisse ver le haut laissant place au menu.
+  - "img" OnHover, le nom de la recette apparait.
+Menu:
+  - On Hover, l'intitulé glisse ver la gauche laissent place au contenu
