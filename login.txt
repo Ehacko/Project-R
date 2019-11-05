@@ -1,0 +1,1 @@
+mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=true&w=majority
