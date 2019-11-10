@@ -1,0 +1,53 @@
+-week=["Dimanche 3 Novembre 2019", "Lundi 4 Novembre 2019", "Mardi 5 Novembre 2019", "Mercredi 6 Novembre 2019", "Jeudi 7 Novembre 2019", "Vendredi 8 Novembre 2019", "Samedi 9 Novembre 2019" ]
+-day=["Petit déjeuner", "Déjeuner", "Dîner", "Encas"]
+if ParamsGet.Menus=="All"
+  div.menus
+    each days in week
+      .dotted-c
+      div
+        div
+          h3=days
+          .mdj
+              div
+                h4 Petit déjeuner
+                a(href="?Menus="+days)
+                  div
+                    img(src="", alt="Hummmm" height=80)
+                    span Recette
+              div
+                h4 Déjeuner
+                a(href="?Menus="+days)
+                  div
+                    img(src="", alt="Miam miam" height=80)
+                    span Recette
+              div
+                h4 Dîner
+                a(href="?Menus="+days)
+                  div
+                    img(src="", alt="Je vais me regaler" height=80)
+                    span Recette
+    .dotted-c
+else
+  div.menus
+    each meals in day
+      .dotted-c
+      div
+        div
+          h3=meals
+          .mdj
+            div
+              a(href="?Recepices=testA")
+                div
+                  img(src="", alt="Je vais me regaler" height=80)
+                h4 Recette1
+            div
+              a(href="?Recepices=testB")
+                div
+                  img(src="", alt="Je vais me regaler" height=80)
+                h4 Recette2
+            div
+              a(href="?Recepices=testC")
+                div
+                  img(src="", alt="Je vais me regaler" height=80)
+                h4 Recette3
+    .dotted-c

@@ -4,4 +4,18 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    main
+      div.H-dashed
+        div
+      div.Vdashed
+        div.Hdouble
+        div.Vdouble
+          .box
+            include header
+            block content
+            include footer
+        div.Hdouble
+      div.H-dashed
+        div
+        a.share(href="noreply") Partager
+        div
