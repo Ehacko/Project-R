@@ -19,9 +19,8 @@ client.connect(function(err) {
     const collmenu      = db.collection('menus');
     const collIngredient = db.collection('ingredients');
 
-    // collRecette.deleteMany({});
+    //collRecette.deleteMany({});
     querynatorinator(db);
-
 
 });
 
