@@ -19,8 +19,7 @@ client.connect(function(err) {
     const collmenu      = db.collection('menus');
     const collIngredient = db.collection('ingredients');
 
-	//collRecette.deleteMany({});
-	//querynatorinator(db);
+    //collRecette.deleteMany({});
 
 });
 
@@ -31,10 +30,10 @@ function querynatorinator(db){
         assert.equal(err, null);
         
         f=0;
-        cl('\n\n<div class="liste"> <div class="repo">');
+        cl('\n\n<div class="chose"> <div class="repo">');
         for (var i = 0; i < a.length; i++) {
             if (i>a.length/2 && f == 0) { cl('</div> <div class="repo">'); f++; }
-            cl(`<input type="checkbox" value="${a[i].Nom}" id="${a[i]._id}" class="ingredient"> <div class="no">${a[i].Nom}</div> <input class="${a[i]._id}" value="0"></input> </br> <hr>`);
+            cl(`<input type="checkbox" value="${a[i].Nom}" id="${a[i]._id}" class="marqueur"> <div class="no">${a[i].Nom}</div> <input class="${a[i]._id}" value="0"></input> </br> <hr>`);
         }
         cl('</div>\n<div> <button onclick="querynator()">Query !</button> <div id="query"></div> </div> </div>\n');
 
@@ -66,8 +65,6 @@ const findDoc = function(db, collectionName, callback) {
 	});
 };
 
-
-
 const findThis = function(db, collectionName, filtre, callback) {
 	const collection = db.collection(collectionName);
 	
@@ -90,4 +87,4 @@ const remplacer = function(db, collectionName, filtre, newObject, callback) {
 	});
 };
 
-module.exports = findDoc;
+module.exports:

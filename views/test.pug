@@ -1,0 +1,12 @@
+mixin newList(a)
+    ul
+        each foo in a
+            li=foo.Nom
+
+mixin forminator(a)
+    .liste
+        .repo
+            each foo in a
+                input(type="checkbox" id=foo._id class="ingredient" value=foo.Nom)
+                .no=foo.Nom 
+                input(type="text" class=foo._id value=0)
