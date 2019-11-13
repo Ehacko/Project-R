@@ -1,7 +1,49 @@
-mixin newSelect(a,b)
-  select&attributes(attributes)
-    each opt in a
-      if opt.name == b
-        option(value=opt.value selected)=opt.name
-      else
-        option(value=opt.value)=opt.name
+mixin table(header,body)
+  table&attributes(attributes)
+    if header
+      thead
+        tr
+          each val in header
+            th=val
+      tbody
+        each val in body
+          tr
+            -mixin="new"+val[0]
+            +#{mixin}(val[1],true)
+
+
+mixin newSelect(select, table,)
+  if select.label
+    if table
+      td: label(for=select.Id)
+    else: label(for=select.Id)
+  if table
+    td: select&attributes(attributes)
+      each opt in a
+        if opt.name == b
+          option(value=opt.value selected)=opt.name
+        else
+          option(value=opt.value)=opt.name
+  else
+    select&attributes(attributes)
+      each opt in a
+        if opt.name == b
+          option(value=opt.value selected)=opt.name
+        else
+          option(value=opt.value)=opt.name
+mixin newInput(ipt, table)
+  -attr=""
+  each val in ipt.attributes
+    -attr += val[0]+"='"+val[1]+"' "
+  if ipt.label
+    if table
+      td: label(for=ipt.id)=ipt.label
+    else: label(for=ipt.id)=ipt.label
+  else if ipt.id
+    if table
+      td: input(=attr id=ipt.id)
+    else: input(=attr id=ipt.id)
+  else
+    if table
+      td: input(=attr)
+    else: input(=attr)

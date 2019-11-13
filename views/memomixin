@@ -1,0 +1,5 @@
+for new
+for newInput:
+    inputs=[{label:"label1",id:"id1",attributes:[["name","name1"],["type","text"],["placeholder","number1"]]}]
+    table=true,"br",false
+    +newInput(inputs,table)

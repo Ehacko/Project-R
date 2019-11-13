@@ -3,11 +3,11 @@ header
     i
     i
   div.navlinks
-    a(href="?Recepices=All") Recettes
+    a(href="/?Recepices=All") Recettes
     div
-      a(href="?Menus=All") Menus
+      a(href="/?Menus=All") Menus
       h1=Title
-    a(href="?Search=All") Recherche
+    a(href="/?Search=All") Recherche
   div.banniere
     h2
       if ParamsGet.Recepices
@@ -26,8 +26,10 @@ header
           |Menus du Jour
         else if ParamsGet.Menus=="All"
           |Menus
-        else
+        else if isNaN(ParamsGet.Menus)
           =ParamsGet.Menus
+        else
+          =new Date(Number(ParamsGet.Menus)).toLocaleDateString("en-US", Options.Date)
     div
       div.left
         div.triangle-topright
