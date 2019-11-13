@@ -2,6 +2,6 @@ mixin newSelect(a,b)
   select&attributes(attributes)
     each opt in a
       if opt.name == b
-        option(value=otp.value selected)=opt.name
+        option(value=opt.value selected)=opt.name
       else
-        option(value=otp.value)=opt.name
+        option(value=opt.value)=opt.name
