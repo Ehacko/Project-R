@@ -1,0 +1,44 @@
+header
+  div.ico
+    i
+    i
+  div.navlinks
+    a(href="?Recepices=All") Recettes
+    div
+      a(href="?Menus=All") Menus
+      h1=Title
+    a(href="?Search=All") Recherche
+  div.banniere
+    h2
+      if ParamsGet.Recepices
+        if ParamsGet.Recepices=="All"
+          |Recettes
+        else
+          =ParamsGet.Recepices
+      else if ParamsGet.Search
+        if ParamsGet.Search=="All"
+          |Recherche
+        else
+          =ParamsGet.Search
+      else
+        -today=1
+        if !ParamsGet.Menus || ParamsGet.Menus==today
+          |Menus du Jour
+        else if ParamsGet.Menus=="All"
+          |Menus
+        else
+          =ParamsGet.Menus
+    div
+      div.left
+        div.triangle-topright
+        div.Btriangle-topright
+        div.triangle-bottomright
+        div.Btriangle-bottomright
+        div.Wtriangle-topright
+      div.dotted
+      div.right
+        div.triangle-topleft
+        div.Btriangle-topleft
+        div.triangle-bottomleft
+        div.Btriangle-bottomleft
+        div.Wtriangle-topleft
