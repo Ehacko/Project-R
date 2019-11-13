@@ -20,7 +20,49 @@ client.connect(function(err) {
     const collIngredient = db.collection('ingredients');
 
     //collRecette.deleteMany({});
-    querynatorinator(db);
+    //querynatorinator(db);
+
+    const lasa = [{ 
+        Nom: "Lasagnes", 
+        Image: "Lasagnes.jpg",
+        
+        Ingredients: [
+          { "_id": ObjectId("5dca0f964fb8e43684705059"), "Necessaire": 500 },
+          { "_id": ObjectId("5dca0f964fb8e4368470505e"), "Necessaire": 200 },
+          { "_id": ObjectId("5dca0f964fb8e4368470505d"), "Necessaire": 100 },
+          { "_id": ObjectId("5dca0f964fb8e43684705054"), "Necessaire": 100 },
+          { "_id": ObjectId("5dca0f964fb8e43684705058"), "Necessaire": 100 },
+          { "_id": ObjectId("5dca0f964fb8e43684705064"), "Necessaire": 1 },
+          { "_id": ObjectId("5dca0f964fb8e43684705056"), "Necessaire": 1 },
+          { "_id": ObjectId("5dca0f964fb8e4368470506e"), "Necessaire": 2 },
+          { "_id": ObjectId("5dca0f964fb8e43684705070"), "Necessaire": 1 },
+          { "_id": ObjectId("5dca0f964fb8e43684705072"), "Necessaire": 3 },
+          { "_id": ObjectId("5dca0f964fb8e43684705069"), "Necessaire": 1 },
+          { "_id": ObjectId("5dca0f964fb8e43684705051"), "Necessaire": 1 },
+          { "_id": ObjectId("5dca0f964fb8e43684705061"), "Necessaire": 1 },
+          { "_id": ObjectId("5dca0f964fb8e43684705055"), "Necessaire": 1 },
+          { "_id": ObjectId("5dcb1565464d242da8b72859"), "Necessaire": 1 },
+          { "_id": ObjectId("5dcb1565464d242da8b7285a"), "Necessaire": 1 },
+          { "_id": ObjectId("5dca0f964fb8e43684705066"), "Necessaire": 1 }
+        ],
+        
+        Preparation: [
+          "Pour commencer, préchauffer le four à 170 degrés, préparer tous les ingrédients.",
+          "Précuire les pâtes à lasagne. Mettre de l'eau salée sur le feu. Une fois bouillie, plonger les pâtes durant le temps indiqué sur le paquet. Egoutter puis éponger l'excedent d'eau. Réserver.",
+          "Emincer les oignons, les champignons, les poivrons. Les faire revenir dans un peu d'huile dans l'ordre précédemment établi, chacun une dizaine de minutes. Ajouter les tomates concassées et les diverses épices, le poivre. Laisser mijoter une vingtaine de minutes, saler. Réserver.",
+          "Préparer la béchamel. Faire un roux. Mettre le beurre dans une poêle et laisser fondre. Ajouter la farine au beurre fondu et déssécher la pâte obtenue. Incorporer le lait petit à petit jusqu'à l'obtention d'une pâte homogène. Faire cuire trois minutes et ajouter le sel, le poivre et la muscade. Ajouter la moitié du fromage, mélanger.",
+          "Assembler tous les éléments.",
+          "Ajouter successivement dans un plat allant au four, une couche de sauce puis une couche de pâtes puis une couche de béchamel, recommencer. Finaliser le plat en parsèment le reste du fromage, ajouter quelques noisettes de beurre et enfourner quarante cinq minutes.",
+          "C'est prêt ! Servir chaud.",
+        ],
+        Variante: [
+          "- Remplacer les pâtes par des lamelles de courgettes.",
+          "- Remplacer les poivrons par des carottes et des courgettes."
+        ]
+    }];
+
+    findDoc(db, 'recettes', function() { client.close(); })
+
 
 });
 
