@@ -13,7 +13,7 @@ const url = 'mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=tr
 const client = new MongoClient(url, { useNewUrlParser: true });
 /* */
 
-const findDoc = require('../tests/app');
+const querinator = require('../tests/app');
 
 
 
@@ -30,9 +30,10 @@ router.get('/test', function(req, res, next) {
     assert.equal(null, err);
     console.log("Connection établie");
 
-    const gogogo = async _ => { return client.db('Project-R').collection('ingredients').find({}).sort({ Nom: 1 }).toArray(); };
+    const gogogo = async _ => {return querinator.findDoc('ingredients');};
 
     gogogo().then(value => {
+      cl(value)
       res.render('indextest', {
         Title: 'RESTHOME',
         ParamsGet: req.query,
@@ -46,5 +47,7 @@ router.get('/test', function(req, res, next) {
 router.all("*", function(req, res, next) {
   res.redirect('/');
 });
+
+function cl(a) {console.log(a)};
 
 module.exports = router;

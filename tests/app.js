@@ -3,8 +3,8 @@ const assert = require('assert');
 
 var ObjectId = require('mongodb').ObjectID;
 
-const url = 'mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=true&w=majority';
-//const url = 'mongodb://localhost:27017';
+//const url = 'mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=true&w=majority';
+const url = 'mongodb://localhost:27017';
 
 const dbName = 'Project-R';
 const client = new MongoClient(url, { useNewUrlParser: true });
@@ -16,7 +16,7 @@ client.connect(function(err) {
     const db = client.db(dbName);
 
     const collRecette    = db.collection('recettes');
-    const collmenu      = db.collection('menus');
+    const collmenu       = db.collection('menus');
     const collIngredient = db.collection('ingredients');
 
 	//collRecette.deleteMany({});
@@ -24,9 +24,11 @@ client.connect(function(err) {
 
 });
 
+
+
 function cl(a) {console.log(a);}
 
-function querynatorinator(db){
+const querynatorinator = function(db){
     db.collection('ingredients').find({}).sort({Nom: 1}).toArray(function(err, a) {
         assert.equal(err, null);
         
@@ -43,51 +45,27 @@ function querynatorinator(db){
 }
 
 const ajouterDoc = function(db, collectionName, docList, callback) {
-	const collection = db.collection(collectionName);
-
-	collection.insertMany(docList, 
-		function(err, result) {
-	    assert.equal(err, null);
-	    assert.equal(docList.length, result.result.n);
-	    assert.equal(docList.length, result.ops.length);
-	    console.log( docList.length + " documents ajoutés dans " + collectionName );
-	    callback(result);
-	});
+	client.db('Project-R').collection(collectionName).insertMany(docList);
 };
 
-const findDoc = function(db, collectionName, callback) {
-	const collection = db.collection(collectionName);
-
-	collection.find({}).toArray(function(err, docs) {
-		assert.equal(err, null);
-		console.log('Résultats trouvés dans ' + collectionName + ' : ');
-		console.log(docs);
-		callback(docs);
-	});
+const findDoc = function(collectionName) {
+	return client.db('Project-R').collection(collectionName).find({}).toArray();
 };
-
-
 
 const findThis = function(db, collectionName, filtre, callback) {
-	const collection = db.collection(collectionName);
-	
-		collection.find(filtre).toArray(function(err, docs) {
-		assert.equal(err, null);
-		console.log('Résultats trouvés dans ' + collectionName + ' : ');
-		console.log(docs);
-		callback(docs);
-	});
+	return client.db('Project-R').collection(collectionName).find(filtre).toArray();
 };
 
 const remplacer = function(db, collectionName, filtre, newObject, callback) {
-	const collection = db.collection(collectionName);
-
-	collection.updateOne(filtre, { $set: newObject}, function(err, result) {
-		assert.equal(err, null);
-		assert.equal(1, result.result.n);
-		console.log("mise a jour effectuée");
-		callback(result);
-	});
+	return client.db('Project-R').collection(collectionName).updateOne(filtre, { $set: newObject} );
 };
 
-module.exports = findDoc;
+const querinator = {
+	querynatorinator : querynatorinator,
+	addDoc : ajouterDoc,
+	findDoc : findDoc,
+	fintItem : findThis,
+	updateItem : remplacer
+};
+
+module.exports = querinator;
