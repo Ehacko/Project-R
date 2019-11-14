@@ -28,8 +28,11 @@ const collIngredient = db.collection('ingredients');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  options={};
+  options.Date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
   res.render('index', {
     Title: 'RESTHOME',
+    Options: options,
     ParamsGet: req.query
   });
 });
