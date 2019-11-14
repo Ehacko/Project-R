@@ -8,15 +8,29 @@ mixin table(header,body)
       tbody
         each val in body
           tr
-            -mixin="new"+val[0]
-            +#{mixin}(val[1],true)
+            case val[0]
+              when 'Select'
+               +newSelect(val[1], true)
+              when 'Input'
+               +newInput(val[1], true)
+              when 'TextArea'
+               +newTextArea(val[1], true)
+              when 'Input'
+               +new(val[1], true)
+              default
+                =val[0]
 
 
 mixin newSelect(select, table,)
   if select.label
     if table
       td: label(for=select.Id)
-    else: label(for=select.Id)
+    else
+      label(for=select.Id)
+  -attr=""
+  if select.attributes
+    each val in select.attributes
+      -attr += val[0]+"='"+val[1]+"' "
   if table
     td: select&attributes(attributes)
       each opt in a
@@ -33,17 +47,21 @@ mixin newSelect(select, table,)
           option(value=opt.value)=opt.name
 mixin newInput(ipt, table)
   -attr=""
-  each val in ipt.attributes
-    -attr += val[0]+"='"+val[1]+"' "
+  if ipt.attributes
+    each val in ipt.attributes
+      -attr += val[0]+"='"+val[1]+"' "
   if ipt.label
     if table
       td: label(for=ipt.id)=ipt.label
-    else: label(for=ipt.id)=ipt.label
-  else if ipt.id
+    else
+      label(for=ipt.id)=ipt.label
+  if ipt.id
     if table
       td: input(=attr id=ipt.id)
-    else: input(=attr id=ipt.id)
+    else
+      input(=attr id=ipt.id)
   else
     if table
       td: input(=attr)
-    else: input(=attr)
+    else
+      input(=attr)
