@@ -6,10 +6,8 @@ const MongoClient = require('mongodb').MongoClient;
 const ObjectId    = require('mongodb').ObjectID;
 const assert      = require('assert');
 
-const client = new MongoClient(url, { useNewUrlParser: true });
 
-const url    = 'mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=true&w=majority';
-const dbName = 'Project-R';
+
 /**/
 
 /* GET home page. */
@@ -27,20 +25,17 @@ router.get('/test', function(req, res, next) {
   client.connect(function(err) {
     assert.equal(null, err);
     console.log("Connection établie");
-    const db = client.db(dbName);
-    const collIngredient = db.collection('ingredients');
+
+    const client = new MongoClient('mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });  
+    const gogogo = async _ => { return client.db('Project-R').collection('ingredients').find({}).sort({ Nom: 1 }).toArray(); };
   
-    const gogogo = async _ => { return db.collection('ingredients').find({}).sort({ Nom: 1 }).toArray(); };
-  
-    gogogo().then(value => {
-      //client.close(); 
-  
+    gogogo().then(value => {  
       res.render('indextest', {
         Title: 'RESTHOME',
         ParamsGet: req.query,
         a: value
       });
-    }).catch((err) => { 'query error : ' + console.log(err); });
+    }).catch((err) => { 'connection ingredients error : ' + console.log(err); });
   });
 });
 
