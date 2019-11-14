@@ -3,8 +3,8 @@ const assert = require('assert');
 
 var ObjectId = require('mongodb').ObjectID;
 
-//const url = 'mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=true&w=majority';
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=true&w=majority';
+//const url = 'mongodb://localhost:27017';
 
 const dbName = 'Project-R';
 const client = new MongoClient(url, { useNewUrlParser: true });

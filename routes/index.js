@@ -26,14 +26,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/test', function(req, res, next) {
-
   if(req.query.recepices){
-    coltarget="recepices";
+    coltarget="recettes";
     if(req.query.recepices=="All") findtarget={};
     else findtarget={Nom: req.query.recepices};
   }
-  else if(req.query.ingrédients){
-    coltarget="recepices";
+  else if(req.query.ingredients){
+    coltarget="ingredients";
     if(req.query.ingrédients=="All") findtarget={};
     else findtarget={Nom: req.query.ingrédients};
   }
@@ -48,7 +47,7 @@ router.get('/test', function(req, res, next) {
       assert.equal(null, err);
       console.log("Connection établie");
   
-      const gogogo = async _ => {return querinator.findDoc('ingredients');};
+      const gogogo = async _ => { cl('b');cl(coltarget); return querinator.findDoc(coltarget);};
   
       gogogo().then(value => {
         cl(value)
