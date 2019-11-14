@@ -26,20 +26,44 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/test', function(req, res, next) {
-  client.connect(function(err) {
-    assert.equal(null, err);
-    console.log("Connection établie");
 
-    const gogogo = async _ => { return client.db('Project-R').collection('ingredients').find({}).sort({ Nom: 1 }).toArray(); };
+  if(req.query.recepices){
+    coltarget="recepices";
+    if(req.query.recepices=="All") findtarget={};
+    else findtarget={Nom: req.query.recepices};
+  }
+  else if(req.query.ingrédients){
+    coltarget="recepices";
+    if(req.query.ingrédients=="All") findtarget={};
+    else findtarget={Nom: req.query.ingrédients};
+  }
+  else if(req.query.search) coltarget=false;
+  else {
+    coltarget="menus";
+    if(req.query.menus=="All") findtarget={};
+    else findtarget={Date: req.query.menus};
+  }
+  if(coltarget){
+    client.connect(function(err) {
+      assert.equal(null, err);
+      console.log("Connection établie");
 
-    gogogo().then(value => {
-      res.render('indextest', {
-        Title: 'RESTHOME',
-        ParamsGet: req.query,
-        a: value
-      });
-    }).catch((err) => { 'query error : ' + console.log(err); });
-  });
+      const gogogo = async _ => { return client.db('Project-R').collection('ingredients').find({}).sort({ Nom: 1 }).toArray(); };
+
+      gogogo().then(value => {
+        res.render('indextest', {
+          Title: 'RESTHOME',
+          ParamsGet: req.query,
+          a: value
+        });
+      }).catch((err) => { 'query error : ' + console.log(err); });
+    });
+  } else {
+    res.render('indextest', {
+      Title: 'RESTHOME',
+      ParamsGet: req.query
+    });
+  }
 });
 
 
