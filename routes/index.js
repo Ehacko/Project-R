@@ -15,6 +15,15 @@ const client = new MongoClient(url, { useNewUrlParser: true });
 
 const findDoc = require('../tests/app');
 
+client.connect(function(err) {
+  assert.equal(null, err);
+  console.log("Connection établie");
+
+
+
+});
+const db = client.db(dbName);
+const collIngredient = db.collection('ingredients');
 
 
 /* GET home page. */
@@ -26,25 +35,18 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/test', function(req, res, next) {
-  client.connect(function(err) {
-    assert.equal(null, err);
-    console.log("Connection établie");
 
-    const db = client.db(dbName);
-    const collIngredient = db.collection('ingredients');
+  const gogogo = async _ => { return db.collection('ingredients').find({}).sort({ Nom: 1 }).toArray(); };
 
-    const gogogo = async _ => { return db.collection('ingredients').find({}).sort({ Nom: 1 }).toArray(); };
+  gogogo().then(value => {
+    //client.close(); 
 
-    gogogo().then(value => {
-      //client.close(); 
-
-      res.render('indextest', {
-        Title: 'RESTHOME',
-        ParamsGet: req.query,
-        a: value
-      });
-    }).catch((err) => { 'query error : ' + console.log(err); });
-  });
+    res.render('indextest', {
+      Title: 'RESTHOME',
+      ParamsGet: req.query,
+      a: value
+    });
+  }).catch((err) => { 'query error : ' + console.log(err); });
 });
 
 
