@@ -5,20 +5,13 @@ mixin table(header,body)
         tr
           each val in header
             th=val
+    if body
       tbody
-        each val in body
+        each row in body
           tr
-            case val[0]
-              when 'Select'
-               +newSelect(val[1], true)
-              when 'Input'
-               +newInput(val[1], true)
-              when 'TextArea'
-               +newTextArea(val[1], true)
-              when 'Input'
-               +new(val[1], true)
-              default
-                =val[0]
+            for column in row; ii++
+              td
+              
 
 
 mixin newSelect(select, table,)
