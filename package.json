@@ -12,6 +12,7 @@
     "express-fileupload": "^1.1.6-alpha.6",
     "http-errors": "~1.6.3",
     "jquery": "^3.4.1",
+    "mongo": "^0.1.0",
     "morgan": "~1.9.1",
     "pug": "^2.0.4",
     "socket.io": "^2.3.0"
