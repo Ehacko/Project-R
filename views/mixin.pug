@@ -9,8 +9,8 @@ mixin table(header,body)
       tbody
         each row in body
           tr
-            for column in row; ii++
-              td
+            each column in row;
+              td=column
               
 
 
