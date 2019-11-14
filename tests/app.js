@@ -6,25 +6,13 @@ var ObjectId = require('mongodb').ObjectID;
 const url = 'mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=true&w=majority';
 //const url = 'mongodb://localhost:27017';
 
-const dbName = 'Project-R';
 const client = new MongoClient(url, { useNewUrlParser: true });
 
 client.connect(function(err) {
 	assert.equal(null, err);
 	console.log("Connection établie");
 
-    const db = client.db(dbName);
-
-    const collRecette    = db.collection('recettes');
-    const collmenu       = db.collection('menus');
-    const collIngredient = db.collection('ingredients');
-
-	//collRecette.deleteMany({});
-	//querynatorinator(db);
-
 });
-
-
 
 function cl(a) {console.log(a);}
 
@@ -44,7 +32,7 @@ const querynatorinator = function(db){
     });
 }
 
-const ajouterDoc = function(db, collectionName, docList, callback) {
+const ajouterDoc = function(collectionName, docList,) {
 	client.db('Project-R').collection(collectionName).insertMany(docList);
 };
 
@@ -52,11 +40,11 @@ const findDoc = function(collectionName) {
 	return client.db('Project-R').collection(collectionName).find({}).toArray();
 };
 
-const findThis = function(db, collectionName, filtre, callback) {
+const findThis = function(collectionName, filtre, callback) {
 	return client.db('Project-R').collection(collectionName).find(filtre).toArray();
 };
 
-const remplacer = function(db, collectionName, filtre, newObject, callback) {
+const remplacer = function(collectionName, filtre, newObject) {
 	return client.db('Project-R').collection(collectionName).updateOne(filtre, { $set: newObject} );
 };
 

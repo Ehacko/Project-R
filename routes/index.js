@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
+const assert = require('assert');
 /**/
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
-
-const ObjectId = require('mongodb').ObjectID;
 
 const url = 'mongodb+srv://ludji:root@test-w7rhz.mongodb.net/test?retryWrites=true&w=majority';
 
