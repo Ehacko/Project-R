@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.no{
+			width: 200px;
+			display: inline-block;
+		}
+
+		.liste{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: 70%;
+		}
+
+		#recette{
+			width: 60%; 
+			text-align: center; 
+			margin-left: 20%;
+			height: 25px;
+			border-radius: 3px;
+			border: 1px solid gray;
+		}
+
+		.prepa,.vari {
+			padding: 20px;
+		}
+		
+		#prep textarea{
+			width: 100%;
+			height: 50px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<input type="text" id="recette" placeholder="Nom de la recette" required>
+	<br><br> 
+
+	<div class="liste" style="margin: auto"> 
+		<div class="repo">
+			<input type="checkbox" value="Ail" id="5dca0f964fb8e43684705057" class="ingredient"> <div class="no">Ail</div> <input class="5dca0f964fb8e43684705057" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Aubergine" id="5dca0f964fb8e4368470506a" class="ingredient"> <div class="no">Aubergine</div> <input class="5dca0f964fb8e4368470506a" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Banane" id="5dca0f964fb8e4368470506b" class="ingredient"> <div class="no">Banane</div> <input class="5dca0f964fb8e4368470506b" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Beurre" id="5dca0f964fb8e43684705058" class="ingredient"> <div class="no">Beurre</div> <input class="5dca0f964fb8e43684705058" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Bicarbonate de sodium" id="5dca0f964fb8e4368470504d" class="ingredient"> <div class="no">Bicarbonate de sodium</div> <input class="5dca0f964fb8e4368470504d" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Cannelle" id="5dca0f964fb8e4368470504e" class="ingredient"> <div class="no">Cannelle</div> <input class="5dca0f964fb8e4368470504e" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Carotte" id="5dcc5c6d1c9d440000089ff7" class="ingredient"> <div class="no">Carotte</div> <input class="5dcc5c6d1c9d440000089ff7" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Champignon" id="5dca0f964fb8e43684705059" class="ingredient"> <div class="no">Champignon</div> <input class="5dca0f964fb8e43684705059" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Citron" id="5dca0f964fb8e4368470506c" class="ingredient"> <div class="no">Citron</div> <input class="5dca0f964fb8e4368470506c" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Citron vert" id="5dcc62101c9d440000089ff9" class="ingredient"> <div class="no">Citron vert</div> <input class="5dcc62101c9d440000089ff9" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Cive" id="5dca0f964fb8e4368470505a" class="ingredient"> <div class="no">Cive</div> <input class="5dca0f964fb8e4368470505a" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Coriandre" id="5dca0f964fb8e43684705052" class="ingredient"> <div class="no">Coriandre</div> <input class="5dca0f964fb8e43684705052" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Eau" id="5dca0f964fb8e43684705063" class="ingredient"> <div class="no">Eau</div> <input class="5dca0f964fb8e43684705063" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Farine110" id="5dca0f964fb8e4368470505d" class="ingredient"> <div class="no">Farine110</div> <input class="5dca0f964fb8e4368470505d" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Farine55" id="5dca0f964fb8e4368470505b" class="ingredient"> <div class="no">Farine55</div> <input class="5dca0f964fb8e4368470505b" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Farine80" id="5dca0f964fb8e4368470505c" class="ingredient"> <div class="no">Farine80</div> <input class="5dca0f964fb8e4368470505c" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Fromage rapé" id="5dca0f964fb8e4368470505e" class="ingredient"> <div class="no">Fromage rapé</div> <input class="5dca0f964fb8e4368470505e" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Giraumon" id="5dca0f964fb8e4368470505f" class="ingredient"> <div class="no">Giraumon</div> <input class="5dca0f964fb8e4368470505f" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Huile" id="5dca0f964fb8e43684705053" class="ingredient"> <div class="no">Huile</div> <input class="5dca0f964fb8e43684705053" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Lait" id="5dca0f964fb8e43684705064" class="ingredient"> <div class="no">Lait</div> <input class="5dca0f964fb8e43684705064" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Laurier" id="5dca0f964fb8e43684705056" class="ingredient"> <div class="no">Laurier</div> <input class="5dca0f964fb8e43684705056" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Lentille" id="5dca0f964fb8e43684705060" class="ingredient"> <div class="no">Lentille</div> <input class="5dca0f964fb8e43684705060" value="0"></input> </br> <hr>
+			</div> <div class="repo">
+			<input type="checkbox" value="Levure boulangère" id="5dca0f964fb8e43684705067" class="ingredient"> <div class="no">Levure boulangère</div> <input class="5dca0f964fb8e43684705067" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Levure chimique" id="5dca0f964fb8e43684705068" class="ingredient"> <div class="no">Levure chimique</div> <input class="5dca0f964fb8e43684705068" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Moringa" id="5dca0f964fb8e4368470504f" class="ingredient"> <div class="no">Moringa</div> <input class="5dca0f964fb8e4368470504f" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Muscade" id="5dca0f964fb8e43684705050" class="ingredient"> <div class="no">Muscade</div> <input class="5dca0f964fb8e43684705050" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Oeuf" id="5dca0f964fb8e4368470506d" class="ingredient"> <div class="no">Oeuf</div> <input class="5dca0f964fb8e4368470506d" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Oignon" id="5dca0f964fb8e4368470506e" class="ingredient"> <div class="no">Oignon</div> <input class="5dca0f964fb8e4368470506e" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Origan" id="5dcb1565464d242da8b72859" class="ingredient"> <div class="no">Origan</div> <input class="5dcb1565464d242da8b72859" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Persil" id="5dca0f964fb8e43684705054" class="ingredient"> <div class="no">Persil</div> <input class="5dca0f964fb8e43684705054" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Piment rouge" id="5dca0f964fb8e4368470506f" class="ingredient"> <div class="no">Piment rouge</div> <input class="5dca0f964fb8e4368470506f" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Piment végétarien" id="5dca0f964fb8e43684705070" class="ingredient"> <div class="no">Piment végétarien</div> <input class="5dca0f964fb8e43684705070" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Poivre" id="5dcb1565464d242da8b7285a" class="ingredient"> <div class="no">Poivre</div> <input class="5dcb1565464d242da8b7285a" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Poivron" id="5dca0f964fb8e43684705072" class="ingredient"> <div class="no">Poivron</div> <input class="5dca0f964fb8e43684705072" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Pomme de terre" id="5dca0f964fb8e43684705071" class="ingredient"> <div class="no">Pomme de terre</div> <input class="5dca0f964fb8e43684705071" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Pâtes à lasagne" id="5dca0f964fb8e43684705069" class="ingredient"> <div class="no">Pâtes à lasagne</div> <input class="5dca0f964fb8e43684705069" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Sauce tomate" id="5dca0f964fb8e43684705065" class="ingredient"> <div class="no">Sauce tomate</div> <input class="5dca0f964fb8e43684705065" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Sel" id="5dca0f964fb8e43684705051" class="ingredient"> <div class="no">Sel</div> <input class="5dca0f964fb8e43684705051" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Sucre" id="5dca0f964fb8e43684705061" class="ingredient"> <div class="no">Sucre</div> <input class="5dca0f964fb8e43684705061" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Thym" id="5dca0f964fb8e43684705055" class="ingredient"> <div class="no">Thym</div> <input class="5dca0f964fb8e43684705055" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Tomate" id="5dca0f964fb8e43684705073" class="ingredient"> <div class="no">Tomate</div> <input class="5dca0f964fb8e43684705073" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Tomates concassées" id="5dca0f964fb8e43684705066" class="ingredient"> <div class="no">Tomates concassées</div> <input class="5dca0f964fb8e43684705066" value="0"></input> </br> <hr>
+			<input type="checkbox" value="Yaourt" id="5dca0f964fb8e43684705062" class="ingredient"> <div class="no">Yaourt</div> <input class="5dca0f964fb8e43684705062" value="0"></input> </br> <hr>
+		</div>
+	</div>
+
+	<div class="prepa">
+		<p>Preparation :</p>
+		<div id="prep1"><p> Etape 1: </p><textarea class="aration1" type="text"></textarea></div> <br>
+		<button onclick="add(1, 'Etape')">ajouter etape</button>
+	</div>
+
+	<div class="vari">
+		<input type="checkbox" id="vari"> <div class="no">ajouter des variations ?</div>
+		<p>Variations :</p>
+		<div id="prep2"><p> Variation 1: </p><textarea class="aration2" type="text"></textarea></div> <br>
+		<button onclick="add(2, 'Variation')">ajouter etape</button>
+	</div>
+
+	<button onclick="querynator()">Query !</button> <p id="query"></p>
+
+
+
+
+
+
+	<script type="text/javascript" src="jquery-3.4.1.js"></script>
+	<script>
+		function add(a, b){ $('#prep' + a).append(`<p> ${b} ${$(`.aration${a}`).length +1}: </p><textarea class="aration${a}" type="text"></textarea>`); }
+		function cl(a){console.log(a);}
+		function ObjectId(){}
+
+		function querynator(){
+			let ingredient = document.getElementsByClassName("ingredient");
+			let k   = 0
+			let sp  = "&nbsp;&nbsp;&nbsp;&nbsp;"
+			let foo = `const nouvelleRecette = [{<br>Nom: "${$('#recette').val()}",<br>Image: "${$('#recette').val()}.jpg",<br>Ingredient : [<br>`
+
+
+			for (var i=0; i<ingredient.length; i++) {
+				if (ingredient[i].checked == true) {
+					if(k) foo += ',<br>'
+					necessaire = document.getElementsByClassName(ingredient[i].id)[0].value
+					foo += `${sp}{ "_id": ObjectId("${ingredient[i].id}"), "Necessaire": ${necessaire} }`
+					k++
+				}
+			} foo+= '<br>],<br>'
+
+			let preparation = document.getElementsByClassName('aration1');
+			foo += 'Preparation :[<br>'
+			k=0
+
+			for (var j=0; j<preparation.length; j++){
+				if (preparation[j].value != ""){
+					if(k) foo += ',<br>'
+					foo+= `${sp}"${preparation[j].value}"`
+					k++
+				}
+			} foo+= '<br>]'
+
+			if (document.getElementById('vari').checked){
+				let variation = document.getElementsByClassName('aration2');
+				foo+= ',<br>Variation :[<br>'
+				g=0
+
+
+				for (var l=0; l<variation.length; l++){
+					debugger
+					cl(l)
+					cl(variation[l].value)
+
+					if (variation[l].value != ""){
+						if(g) foo += ',<br>'
+						foo+= `${sp}"${variation[l].value}"`
+						g++
+					}
+				} foo+= '<br>]'
+			}
+
+			foo+= '<br>'
+
+
+
+
+			foo+= '<BR>}];<br>'
+			$('#query').html(foo);
+		}
+
+
+
+	</script>
+</body>
+</html>
