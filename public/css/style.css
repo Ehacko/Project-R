@@ -4,6 +4,9 @@ body {
   background-color: rgba(25, 25, 25, 1);
   color: rgba(225, 225, 225, 1);
 }
+img{
+  width: 100%;
+}
 .H-dashed {
   display: flex;
   height: 28px;
@@ -258,4 +261,31 @@ body {
   .mdj img{
     height: 100%;
     width: 100%;
+  }
+
+  /* recepices */
+  .list>li>*{
+    color: rgba(225, 225, 225, 1);
+    margin: 2.5px;
+    border: rgba(225, 225, 225, .25) 2px solid;
+    display: block;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+  }
+  .list>li>*:hover{
+    color: rgba(255, 0, 0, 0.75);
+    border-color: rgba(225, 225, 225, .75);
+    background-color: rgba(225, 225, 225, .25);
+  }
+  .grid{
+    display: grid;
+  }
+  .grid.columns2{
+    grid-template-columns: auto auto;
+    padding: 0;
+  }
+  .grid.columns2 li{
+    list-style-type: none;
   }

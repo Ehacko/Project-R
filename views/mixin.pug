@@ -1,4 +1,4 @@
-mixin table(header,body)
+mixin newtable(header,body)
   table&attributes(attributes)
     if header
       thead
@@ -11,8 +11,6 @@ mixin table(header,body)
           tr
             each column in row
               td=column
-
-
 mixin newSelect(select, table,)
   if select.label
     if table
@@ -57,3 +55,12 @@ mixin newInput(ipt, table)
       td: input(=attr)
     else
       input(=attr)
+mixin newLis(lis, target, link)
+  each li in lis
+    if typeof(li)=="object"
+      if link
+        li: a(href="/?"+link+"="+li[target])=li[target]
+      else
+        li=li[target]
+    else
+      li=li
