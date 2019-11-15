@@ -6,16 +6,12 @@ const client = new MongoClient(url, { useNewUrlParser: true });
 
 client.connect(function(err) {
 	assert.equal(null, err);
-	//console.log("Connection établie");
+	console.log("Connection établie");
 });
 
 const querinator = {
 	querynatorinator : 'querynatorinator',
 	addDoc : function(collectionName, docList,) {
-        client.connect(function(err) {
-            assert.equal(null, err);
-            console.log("Connection établie");
-        });
         client.db('Project-R').collection(collectionName).insertMany(docList);
     },
 	findDoc : function(collectionName) {
