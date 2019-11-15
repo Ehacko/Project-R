@@ -40,7 +40,6 @@ router.get('/test', function(req, res, next) {
   cl(coltarget)
   cl(findtarget)
   if(coltarget){
-      client.close()
       const gogogo = async _ => { return querinator.findItem(coltarget, findtarget);};
   
       gogogo().then(value => {
