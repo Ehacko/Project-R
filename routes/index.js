@@ -40,10 +40,6 @@ router.get('/test', function(req, res, next) {
   cl(coltarget)
   cl(findtarget)
   if(coltarget){
-    client.connect(function(err) {
-      assert.equal(null, err);
-      console.log("Connection établie");
-  
       const gogogo = async _ => { return querinator.findItem(coltarget, findtarget);};
   
       gogogo().then(value => {
@@ -54,7 +50,6 @@ router.get('/test', function(req, res, next) {
           a: value
         });
       }).catch((err) => { 'query error : ' + console.log(err); });
-    });
   } else {
     res.render('index', {
       Title: 'RESTHOME',

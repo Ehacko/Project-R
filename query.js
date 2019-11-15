@@ -6,7 +6,7 @@ const client = new MongoClient(url, { useNewUrlParser: true });
 
 client.connect(function(err) {
 	assert.equal(null, err);
-	console.log("Connection établie");
+	//console.log("Connection établie");
 });
 
 function cl(a) {console.log(a);}
