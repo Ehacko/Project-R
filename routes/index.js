@@ -1,13 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const assert = require('assert');
-/**/
-const client = require('../query').client;
 /* */
-
 //const querinator = require('../tests/app');
 const querinator = require('../query').querinator;
-cl(querinator)
 
 
 

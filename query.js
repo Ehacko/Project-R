@@ -46,4 +46,3 @@ const querynatorinator = function(db){
 }
 
 module.exports.querinator = querinator;
-module.exports.client = client;
