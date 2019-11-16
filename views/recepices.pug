@@ -1,5 +1,5 @@
 .recepices
-  if ParamsGet.Recepices.toLowerCase()=="all"
+  if ParamsGet.Recepices=="All" || ParamsGet.recepices=="All"
     ul.list.grid.columns2
       +newLis(db,"Nom", "Recepices")
   else if db.length==1

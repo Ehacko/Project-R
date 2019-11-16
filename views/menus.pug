@@ -1,37 +1,35 @@
--Today= new Date(new Date().toDateString()).valueOf()
 -findDate =  function(mydate, diff){ return mydate+(86400000*diff)}
 -lang="en-US"
 -week=[Today, findDate(Today, 1), findDate(Today, 2), findDate(Today, 3), findDate(Today, 4), findDate(Today, 5), findDate(Today, 6)]
 -day=["Petit déjeuner", "Déjeuner", "Dîner", "Encas"]
-if ParamsGet.Menus=="All"
-  div.menus
+.menus
+  if ParamsGet.Menus=="All"||ParamsGet.menus=="All"
     each days in week
       .dotted-c
       div
         div
-          h3=new Date(days).toLocaleDateString(lang, Options.Date)
+          //h3=new Date(days).toLocaleDateString(lang, Options.Date)
           .mdj
-              div
-                h4 Petit déjeuner
-                a(href="?Menus="+days)
-                  div
-                    img(src="", alt="Hummmm" height=80)
-                    span Recette
-              div
-                h4 Déjeuner
-                a(href="?Menus="+days)
-                  div
-                    img(src="", alt="Miam miam" height=80)
-                    span Recette
-              div
-                h4 Dîner
-                a(href="?Menus="+days)
-                  div
-                    img(src="", alt="Je vais me regaler" height=80)
-                    span Recette
+            div
+              h4 Petit déjeuner
+              a(href="?Menus="+days)
+                div
+                  img(src="", alt="Hummmm" height=80)
+                  span Recette
+            div
+              h4 Déjeuner
+              a(href="?Menus="+days)
+                div
+                  img(src="", alt="Miam miam" height=80)
+                  span Recette
+            div
+              h4 Dîner
+              a(href="?Menus="+days)
+                div
+                  img(src="", alt="Je vais me regaler" height=80)
+                  span Recette
     .dotted-c
-else
-  div.menus
+  else if db.length==1
     each meals in day
       .dotted-c
       div
@@ -54,3 +52,5 @@ else
                   img(src="", alt="Je vais me regaler" height=80)
                 h4 Recette3
     .dotted-c
+  else
+    h3 Menu introuvable
